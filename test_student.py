@@ -7,10 +7,18 @@ from proj1 import *
 class TestRegionFunctions(unittest.TestCase):
 
     def setUp(self):
-        pass
+        self.rc = rc1
 
     def test_holder(self):
-        pass
+        self.assertEqual(emissions_per_capita(rc4),0.0004)
+        self.assertEqual(area(rect1),2514.22)
+        self.assertEqual(emissions_per_square_km(rc1),0.48)
+        self.assertEqual(densest(region_conditions),"Tokyo Metro")
+        self.assertEqual(project_condition(rc1,1),RegionCondition(
+            rc1.region,
+            rc1.year + 1,
+            int(37000000 * (1 + 0.0003)),
+            1200.0 * (int(37000000 * (1 + 0.0003)) / 37000000)))
 
 
 if __name__ == '__main__':
